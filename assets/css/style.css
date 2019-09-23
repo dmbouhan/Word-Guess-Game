@@ -1,0 +1,43 @@
+body {
+    background-image: url("https://4my3boyz.com/content/images/thumbs/0014388_dog-breeds-husky-corgie-collie-maltese-schnauzer-bulldog-cotton-fabric_500.jpeg");
+    color: rgb(216, 7, 181);
+}
+
+#header {
+    border: 10px solid rgb(216, 7, 181);
+    font-size: 120px;
+    text-align: center;
+    margin: 20px auto;
+    height: 200px;
+    width: 80%;
+}
+
+.scores {
+    border: 10px solid rgb(216, 7, 181);
+    font-size: 60px;
+    text-align: center;
+    margin: 20px auto;
+    height: 200px;
+    width: 80%;
+}
+
+#underscore {
+    border: 10px solid rgb(216, 7, 181);
+    font-size: 80px;
+    text-align: center;
+    margin: 20px auto;
+    height: 100px;
+    width: 80%;
+}
+
+#lettersGuess {
+    border: 10px solid rgb(216, 7, 181);
+    font-size: 60px;
+    text-align: center;
+    margin: 20px auto;
+    height: 100px;
+    width: 80%;
+}
+#header, .scores, #underscore, #lettersGuess {
+    background-color: beige;
+}
