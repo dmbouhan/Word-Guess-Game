@@ -15,17 +15,18 @@ var isGameStarted = false;
 var isGameOver = false;
 var wins = 0;
 var losses = 0;
-var word = ""
+var word = " ";
 var guesses = 0;
-var answerArray = []
+var answerArray = [];
+var wrongLetter = [];
 var guessesText = document.getElementById("lettersGuess");
-
-
 var wordDisplay = document.getElementById("underscore");
 var header = document.getElementById("header");
 var winsTotal = document.getElementById("wins");
 var lossTotal = document.getElementById("losses");
+var wrongGuess = document.getElementById("wrongLetters");
 var newHeader = "Guess the breed of dog!";
+
 document.onkeyup = function () {
     if (isGameStarted === false) {
         initializeGame();
@@ -39,9 +40,12 @@ document.onkeyup = function () {
             }
         }else {
             guesses--;
+            wrongLetter.push(userGuess);
             guessesText.textContent = "Guesses Remaining: " + guesses;
-            
+            console.log(wrongLetter);
+            wrongGuess.textContent = "Wrong Letters: " + wrongLetter;
         }
+        
         wordDisplay.textContent = (answerArray.join(" "));
         if (answerArray.indexOf("_") === -1) {
             isGameOver = true
@@ -92,5 +96,9 @@ var initializeGame = function () {
     guessesText.textContent = "Guesses Remaining: " + guesses;
     header.textContent = newHeader;
     isGameStarted = true;
+    wrongLetter = [];
+    wrongGuess.textContent = "Wrong Letters: ";
 }
-
+// make it so that;
+// 1. an incorrect letter that has already been guessed does not remove one of the guess counts
+// 2. user can only input letter characters as a guess
